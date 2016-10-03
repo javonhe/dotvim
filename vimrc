@@ -65,18 +65,18 @@ set nowritebackup
 set nocompatible              " be iMproved
 filetype off                  " required!
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/vundle.vim
+call vundle#begin()
 
 " let Vundle manage Vundle
 " " required!
-Bundle 'gmarik/vundle'
+Plugin 'VundleVim/Vundle.vim'
 
 "supertab
-Bundle 'ervandew/supertab'
+Plugin 'ervandew/supertab'
 
 "tagbar
-Bundle 'majutsushi/tagbar'
+Plugin 'majutsushi/tagbar'
 let g:tagbar_width=30
 let g:tagbar_left=1
 noremap <C-f> :TagbarToggle<CR>
@@ -87,4 +87,5 @@ nmap <F9> :TrinityToggleSourceExplorer<CR>
 nmap <F10> :TrinityToggleTagList<CR>
 nmap <F11> :TrinityToggleNERDTree<CR>
 
+call vundle#end()
 filetype indent plugin on
