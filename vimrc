@@ -81,6 +81,9 @@ let g:tagbar_width=30
 let g:tagbar_left=1
 noremap <C-f> :TagbarToggle<CR>
 
+"molokai scheme
+Plugin 'tomasr/molokai'
+
 "NERDTree
 nmap <F8> :TrinityToggleAll<CR>
 nmap <F9> :TrinityToggleSourceExplorer<CR>
@@ -88,4 +91,6 @@ nmap <F10> :TrinityToggleTagList<CR>
 nmap <F11> :TrinityToggleNERDTree<CR>
 
 call vundle#end()
+let g:molokai_original = 1
+colorscheme molokai
 filetype indent plugin on
