@@ -1,0 +1,4 @@
+1.将autorun.sh从dotvim中拷贝出来
+2.在dotvim外执行autorun.sh
+3.安装ctags和cscope
+4.打开vim，执行PluginInstall
