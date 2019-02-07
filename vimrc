@@ -84,6 +84,13 @@ nmap <F9> :TrinityToggleSourceExplorer<CR>
 nmap <F10> :TrinityToggleTagList<CR>
 nmap <F12> :TrinityToggleNERDTree<CR>
 
+"括号自动补全
+inoremap ( ()<ESC>i
+inoremap { {<CR>}<ESC>O
+inoremap [ []<ESC>i
+inoremap " ""<ESC>i
+inoremap ' ''<ESC>i
+
 call vundle#end()
 let g:molokai_original = 1
 "colorscheme molokai
