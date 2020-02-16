@@ -25,6 +25,11 @@ set showmatch
 set guioptions-=T
 set vb t_vb=
 
+"tmux使用鼠标
+if exists('$TMUX')
+    set ttymouse=xterm2
+end
+
 "设置文本格式
 set fileformat=unix
 
