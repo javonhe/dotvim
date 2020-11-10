@@ -53,6 +53,12 @@ set cindent
 "设置底部状态栏
 set laststatus=2
 
+"设置持久化撤销
+set undofile
+
+"设置持久化撤销文件的目录
+set undodir=$HOME/.vim/undodir
+
 filetype plugin indent on
 
 
