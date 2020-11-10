@@ -77,6 +77,7 @@ set nocompatible              " be iMproved
 filetype off                  " required!
 
 set rtp+=~/.vim/bundle/Vundle.vim
+set rtp+=~/.fzf/
 call vundle#begin()
 
 " let Vundle manage Vundle
@@ -89,11 +90,15 @@ Plugin 'ervandew/supertab'
 "molokai scheme
 Plugin 'tomasr/molokai'
 
+"fzf
+Plugin 'junegunn/fzf.vim'
+
 "NERDTree
 nmap <F8> :TrinityToggleAll<CR>
 nmap <F9> :TrinityToggleSourceExplorer<CR>
 nmap <F10> :TrinityToggleTagList<CR>
 nmap <F12> :TrinityToggleNERDTree<CR>
+
 
 "括号自动补全
 inoremap ( ()<ESC>i
