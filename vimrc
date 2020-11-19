@@ -65,7 +65,7 @@ filetype plugin indent on
 map ft :call Search_Word()<CR>:copen<CR>
 function Search_Word()
     let w = expand("<cword>") " 在当前光标位置抓词
-    execute "vimgrep " w " *"
+    execute 'vimgrep' w  '**'
 endfunction
 
 "不产生备份文件
