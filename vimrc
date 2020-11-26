@@ -117,6 +117,11 @@ Plugin 'ludovicchabant/vim-gutentags'
 "coc插件用于自动补全，适用于vim8
 Plugin 'neoclide/coc.nvim'
 
+"添加ack插件
+Plugin 'mileszs/ack.vim'
+"<Leader>c进行搜索，同时不自动打开第一个匹配的文件"
+map <Leader>ac :Ack!<Space>
+
 "NERDTree
 nmap <F8> :TrinityToggleAll<CR>
 nmap <F9> :TrinityToggleSourceExplorer<CR>
