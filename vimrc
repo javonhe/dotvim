@@ -1,9 +1,8 @@
+" 关闭对vi的兼容，方便使用vim的强大功能
 set nocompatible
-set number
 
-" detect file type
-filetype on
-filetype plugin on
+" 显示行数
+set number
 
 " 自动把内容写回文件
 set autowrite
@@ -11,18 +10,40 @@ set autowrite
 "历史记录1000条
 set history=1000
 
-"显示tab和空格
+" 显示不可见字符
 set list
+
+"显示tab为>-,显示行尾空格为-
 set listchars=tab:>-,trail:-
 
 set background=dark
+
+" 设置语法自动高亮
 syntax on
-set autoindent
+
+" 设置自动缩进
+"set autoindent
+
+
+" 设置智能缩进
 set smartindent
+
+" 设置c语言格式缩进
+"set cindent
+
+" 设置缩进为4个
 set tabstop=4
 set shiftwidth=4
+set softtabstop=4
+
+" tab键转为空格
+set expandtab
+
+" 输入)}符号的时候，自动匹配到相应的位置
 set showmatch
+
 set guioptions-=T
+
 set vb t_vb=
 
 "设置tag文件搜索路径
@@ -46,13 +67,11 @@ set ruler
 set nohls
 set incsearch
 set ignorecase smartcase
+
+" 使用鼠标
 set mouse=a
-set ruler
-set tabstop=4
-set softtabstop=4
-set autoindent
-set expandtab
-set cindent
+
+
 
 "设置底部状态栏
 set laststatus=2
@@ -62,8 +81,6 @@ set undofile
 
 "设置持久化撤销文件的目录
 set undodir=$HOME/.vim/undodir
-
-filetype plugin indent on
 
 
 map ft :call Search_Word()<CR>:copen<CR>
@@ -95,6 +112,7 @@ Plugin 'ervandew/supertab'
 Plugin 'tomasr/molokai'
 
 "fzf
+Plugin 'junegunn/fzf', { 'dir': '/usr/local/bin/fzf' }
 Plugin 'junegunn/fzf.vim'
 
 "ctags管理
@@ -137,6 +155,9 @@ inoremap " ""<ESC>i
 inoremap ' ''<ESC>i
 
 call vundle#end()
+
 let g:molokai_original = 1
 "colorscheme molokai
+
+" 打开文件类型自动检测，自动缩进，不同文件类型的插件自动加载。具体含义见有道笔记
 filetype indent plugin on
