@@ -115,7 +115,7 @@ Plugin 'tomasr/molokai'
 Plugin 'junegunn/fzf', { 'dir': '/usr/local/bin/fzf' }
 Plugin 'junegunn/fzf.vim'
 
-"ctags管理
+"gtags管理
 Plugin 'ludovicchabant/vim-gutentags'
 " gutentags 搜索工程目录的标志，碰到这些文件/目录名就停止向上一级目录递归
  let g:gutentags_project_root = ['.root','.git']
@@ -123,14 +123,16 @@ Plugin 'ludovicchabant/vim-gutentags'
  " 所生成的数据文件的名称
  let g:gutentags_ctags_tagfile = '.tags'
 
+ " 支持gtags
+ let g:gutentags_modules = []
+ if executable('gtags-cscope') && executable('gtags')
+     let g:gutentags_modules += ['gtags_cscope']
+ endif
+
  " 将自动生成的 tags 文件全部放入 ~/.cache/tags 目录中，避免污染工程目录
  let s:vim_tags = expand('~/.cache/tags')
  let g:gutentags_cache_dir = s:vim_tags
 
- " 配置 ctags 的参数
- let g:gutentags_ctags_extra_args = ['--fields=+niazS', '--extra=+q']
- let g:gutentags_ctags_extra_args += ['--c++-kinds=+px']
- let g:gutentags_ctags_extra_args += ['--c-kinds=+px']
 
 "coc插件用于自动补全，适用于vim8
 Plugin 'neoclide/coc.nvim'
